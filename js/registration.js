@@ -5,12 +5,23 @@ $(document).ready(() => {
 
     $("#reg-button").click(() => {
 
+
         const newUsername = $("#inputNewUsername").val();
         const newPassword = $("#inputNewPassword").val();
-        const repeatPassword = $("#inputRepeatPassword").val();
         const firstName = $("#inputFirstName").val();
         const lastName = $("#inputLastName").val();
 
+
+
+        SDK.User.create(newUsername, newPassword, firstName, lastName, (err, data) => {
+
+            window.location.href = "index.html";
+
+        })
+
+
+
+        /*
         if ((!newUsername || !newPassword || !repeatPassword || !firstName || !lastName) && newPassword.valueOf() === repeatPassword.valueOf()) {
             SDK.User.create(newUsername, newPassword, firstName, lastName, (err, data) => {
                 if (err && err.xhr.status === 401) {
@@ -24,10 +35,6 @@ $(document).ready(() => {
                     }
                 }
             });
-        }
-    });
+        } */
+    })
 });
-
-
-
-

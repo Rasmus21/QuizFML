@@ -109,15 +109,15 @@ const SDK = {
         },
         create: (newUsername, newPassword, firstName, lastName, cb) => {
             SDK.request({
+                url: "/user",
+                method:"POST",
                 data: {
-                  newUsername: newUsername,
-                  newPassword: newPassword,
+                  username: newUsername,
+                  password: newPassword,
                   firstName: firstName,
                   lastName: lastName,
                   type: 1
                 },
-                url: "/user/create",
-                method:"POST",
             }, (err, data) => {
                 //ved create user error
                 if (err) return cb(err);
@@ -129,13 +129,14 @@ const SDK = {
             $("#nav-container").load("nav.html", () => {
                 const currentUser = SDK.User.current();
                 if (currentUser) {
+                    // language=HTML
                     $(".navbar-right").html(`
             <li><a href="login.html"></a></li>
-            <li><a href="#" id="logout-link">Logout</a></li>
+            <li><a href="login.html" id="logout-link">Logout</a></li>
           `);
                 } else {
                     $(".navbar-right").html(`
-            <li><a href="login.js">Log-in<span class="sr-only">(current)</span></a></li>
+            <li><a href="login.html">Log-in<span class="sr-only">(current)</span></a></li>
           `);
                 }
                 $("#logout-link").click(() => SDK.User.logOut());
