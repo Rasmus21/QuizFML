@@ -15,8 +15,9 @@ $(document).ready(() => {
     console.log("Something went wrong")
       } else {
           window.alert("Login var succesfuld :-)")
-          window.location.href = "index.html";
+          window.location.href = "my-page.html";
       }
+
     });
 
   });

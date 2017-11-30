@@ -5,36 +5,16 @@ $(document).ready(() => {
 
     $("#reg-button").click(() => {
 
-
         const newUsername = $("#inputNewUsername").val();
         const newPassword = $("#inputNewPassword").val();
         const firstName = $("#inputFirstName").val();
         const lastName = $("#inputLastName").val();
 
-
-
         SDK.User.create(newUsername, newPassword, firstName, lastName, (err, data) => {
 
+            window.alert("Registrering lykkedes - du logges nu ind")
             window.location.href = "index.html";
 
         })
-
-
-
-        /*
-        if ((!newUsername || !newPassword || !repeatPassword || !firstName || !lastName) && newPassword.valueOf() === repeatPassword.valueOf()) {
-            SDK.User.create(newUsername, newPassword, firstName, lastName, (err, data) => {
-                if (err && err.xhr.status === 401) {
-                    $(".form-group").addClass("has-error")
-                } else {
-                    if (err) {
-                        console.log("Noget går galt")
-                    } else {
-                        window.alert("Brugeren er nu registreret - venligst log ind")
-                        window.location.href = "login.html";
-                    }
-                }
-            });
-        } */
     })
 });
