@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <meta charset="UTF-8">
-    <title>Brugerliste</title>
+    <title>Userslist</title>
 
 </head>
 <body>
@@ -19,8 +19,20 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="jumbotron">
-                <h1 class="display-3">Hello xxxx xxxx</h1>
-                <a class="btn btn-primary btn-lg" href="my-page.html" id="seBrugerAdmin" role="button">Se brugerliste</a>
+                <h1 class="display-3">Userslist</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    </tr>
+                    </thead>
+                    <tbody id="userslistbody">
+
+                    </tbody>
+                </table>
             </div>
 
         </div>
@@ -37,7 +49,7 @@
 <script src="lib/js/jquery-3.2.1.js"></script>
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdk.js"></script>
-<script src="js/OversigtBrugere.js"></script>
+<script src="js/userslist.js"></script>
 
 <script>
     SDK.User.loadNav();

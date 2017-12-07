@@ -151,7 +151,7 @@ const SDK = {
                     // language=HTML
                     $(".navbar-right").html(`                        
                         <li><a href="courses.html">Courses</a></li>
-                        <li><a href="OversigtBrugere.html">Userslist</a></li>
+                        <li><a href="userslist.html">Userslist</a></li>
                         <li><a href="login.html" id="logout-link">Log out</a></li>
 
                     `);
