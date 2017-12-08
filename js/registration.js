@@ -13,7 +13,7 @@ $(document).ready(() => {
         SDK.User.create(newUsername, newPassword, firstName, lastName, (err, data) => {
 
             window.alert("Registrering lykkedes - du logges nu ind")
-            window.location.href = "index.html";
+            window.location.href = "my-page.html";
 
         })
     })

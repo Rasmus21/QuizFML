@@ -14,7 +14,7 @@ $(document).ready(() => {
       } else if (err) {
     console.log("Something went wrong")
       } else {
-          window.alert("Login var succesfuld :-)")
+          window.alert("Login var succesfuld :-)");
           window.location.href = "my-page.html";
       }
 

@@ -144,6 +144,28 @@ const SDK = {
             });
         },
 
+        createAdmin: (newUsername1, newPassword1, firstName1, lastName1, cb) => {
+            SDK.request({
+                url: "/user",
+                method: "POST",
+                data: {
+                    username: newUsername1,
+                    password: newPassword1,
+                    firstName: firstName1,
+                    lastName: lastName1,
+                    type: 2
+                },
+            }, (err, data) => {
+                //ved createAdmin error
+                if (err) return cb(err);
+
+                data = JSON.parse(data);
+
+                cb(null, data);
+            });
+        },
+
+
         loadNav: (cb) => {
             $("#nav-container").load("nav.html", () => {
                 const currentUser = SDK.User.current();
