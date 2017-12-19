@@ -1,15 +1,19 @@
 $(document).ready(() => {
 
+//Koden herunder opretter og henter users fra databasen
 if (SDK.Storage.load("type") === 2) {
-    const userslistbody = $('#userslistbody');
+    const userslistpage = $('#userslistpage');
 
-    userslistbody.html("");
+    userslistpage.html("");
     SDK.User.findAll ((err, users) => {
         users.forEach((user) => {
 
-    userslistbody.append(`<tr><td>${user.userId}</td><td>${user.username}</td><td>${user.firstName}</td><td>${user.lastName}</td></tr>`);
+    userslistpage.append(`<tr><td>${user.userId}</td><td>${user.username}</td><td>${user.firstName}</td><td>${user.lastName}</td></tr>`);
 
             });
         });
     }
 });
+
+
+
