@@ -26,21 +26,20 @@ const SDK = {
 
     },
 
-    /*
+
        Quiz: {
-           create: (data, cb) => {
+           create: (quiz, cb) => {
                SDK.request({
                    method: "POST",
                    url: "/quiz",
                    data: {
-                      quizId: quizId,
-                      quizTitle: quizTitle,
-                      courseId: courseId
+                      courseId: quiz.courseId,
+                      quizTitle: quiz.quizTitle
                    }
                }, cb);
            },
        },
-   */
+
 
     Question: {
 
@@ -170,17 +169,16 @@ const SDK = {
                 });
             },
 
-                    delete: (id, cb) => {
-                        SDK.request({
-                            method: "DELETE",
-                            url: "/user/" + id,
-                        },
-                        (err) => {
-                            if (err) return cb(err);
-
-                            cb(null);
-                        });
+            delete: (id, cb) => {
+                SDK.request({
+                        method: "DELETE",
+                        url: "/user/" + id,
                     },
+                    (err) => {
+                        if (err) return cb(err);
+                        cb(null);
+                    });
+            },
 
 
 
