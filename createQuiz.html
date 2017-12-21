@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="css/main.css">
 
     <meta charset="UTF-8">
-    <title>Create Quiz</title>
+    <title>Create a quiz - FML Quiz</title>
 
 </head>
 <body>
+
 
 <div class="container">
 
@@ -18,16 +19,25 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="jumbotron">
-                <h2 class="display-3">Create a Quiz</h2>
-                <p class="lead">This is where you as admin creates a quiz for a specific course of your choosing</p>
-                <hr class="my-4">
-                <p>hhhhhhhhhhhhhh</p>
-                <p class="lead">
-                </p>
+                <div class="courseDiv" id="courseDiv">
+                <div class="createQuizTitle" id="createQuizTitle">
+                    <h1>Create Quiz</h1>
+                    <div class="line" id="line"></div>
+                </div>
+                <div class="CQS" id="CQS">
+                    <p>Chose what course you want to create a quiz for</p>
+                </div>
+                <div class="courseButtons">
+                    <button class="courseButton" data-id="2" id="ItForandringsledelse">ITF</button>
+                    <button class="courseButton" data-id="3" id="Makroøkonomi">Makro</button>
+                    <button class="courseButton" data-id="4" id="VØS3">VØS</button>
+                    <button class="courseButton" data-id="1" id="DistribueredeSystemer">DIS</button>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 
 
 <footer class="footer">
@@ -40,9 +50,10 @@
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdk.js"></script>
 <script src="js/quiz.js"></script>
+
 <script>
     SDK.User.loadNav();
 </script>
 
 </body>
-</html>
+</html>>

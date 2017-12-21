@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta charset="UTF-8">
+    <title>QuizFML 2017</title>
+
+    <div class="container">
+
+        <div class="row" id="nav-container"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1>Create questions for the Quiz</h1>
+
+                        <div id="load-test"></div>
+                    </div>
+                    <div class="form-group">
+                        <center>
+                        <label class="control-label" for="inputQuestion">Question:</label>
+                        <input type="Text" class="form-control" id="inputQuestion" placeholder="Write a question?">
+                        </center>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="inputChoice1">Choice 1</label>
+                        <input type="Text" class="form-control" id="inputChoice1" placeholder="Write the first choice?">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="inputChoice2">Choice 2</label>
+                        <input type="Text" class="form-control" id="inputChoice2" placeholder="Write the second choice?">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="inputChoice3">Choice 3</label>
+                        <input type="Text" class="form-control" id="inputChoice3" placeholder="Write the third choice?">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="inputChoice4">Choice 4</label>
+                        <input type="Text" class="form-control" id="inputChoice4" placeholder="Write the fourth choice?">
+                    </div>
+                    <div>
+                        <ol>
+                            <p>Choose the correct answer:</p>
+                            <select id="choiceAnswer">
+                                <option value="1">Choice 1</option>
+                                <option value="2">Choice 2</option>
+                                <option value="3">Choice 3</option>
+                                <option value="4">Choice 4</option>
+                            </select>
+                        </ol>
+                    </div>
+                    <div>
+                        <button style="margin-bottom: 40px" class="btn btn-default" id="questionSubmit-button">Submit questions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">2017 © All rights reserved - QuizFML</p>
+            </div>
+        </footer>
+
+        <script src="lib/js/jquery-3.2.1.js"></script>
+        <script src="lib/js/bootstrap.js"></script>
+        <script src="js/sdk.js"></script>
+        <script src="js/question.js"></script>
+
+        <script>
+            SDK.User.loadNav();
+        </script>
+
+
+</body>
+</html>

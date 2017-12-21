@@ -6,9 +6,9 @@ $(document).ready(() => {
 
     const currentUser = SDK.User.current();
 
-    const deleteUserButton = $("#deleteUser-button");
     const adminRegButton = $("#adminReg-button");
     const createQuizButton = $("#createQuiz-button");
+    const deleteUserButton = $("#deleteUser-button");
 
 adminRegButton.hide();
     if (SDK.Storage.load("type") === 2) {

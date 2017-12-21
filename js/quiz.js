@@ -1,23 +1,46 @@
 $(document).ready(() => {
 
-    SDK.User.loadNav();
 
-    /*
+    // $('.courseDiv').slideUp(1).slideDown(1000);
+    $('.homeText').slideUp(1).slideDown(1000);
 
-    $("createQuiz-button").click(() => {
+    $('#adminButton').hide();
+    $('#userButton').hide();
 
-        const quizId = $("QuizId").val();
-        const quizTitle = $("QuizTitle").val();
-        const courseId = $("courseId")
+    const test = SDK.Storage.load("username");
+    $('#mainpageDisplayUser').html("Welcome, " + test);
 
-            SDK.Quiz.create(quizId, quizTitle, courseId, (err, data) => {
+    if (SDK.Storage.load("type") === 2) {
+        $('#adminButton').show();
+        $('#userButton').show();
+    }
 
-                window.alert("Quizzen er blevet skabt")
-                window.location.href = "quiz.html";
-        })
-    })
+    $(".courseButtons button").click((e) => {
 
-    */
+        let quiz = {
+            courseId: e.currentTarget.getAttribute("data-id"),
+            quizTitle: prompt("What is the name of your quiz?")
+        };
+
+        SDK.Quiz.create(quiz, (err, data) => {
+            if (err && err.xhr.status === 401) {
+                $(".form-group").addClass("has-error");
+                return alert("400 - error!");
+            } else if (err) {
+                alert("ERROR is " + err);
+                return console.log("Bad stuff happened", err)
+            } else {
+                SDK.Storage.persist("quizId", data.quizId);
+               window.location.href = "question.html";
+
+            }
+        });
+    });
+
+    $('.logoutButton').click((e) => {
+        e.preventDefault();
+        SDK.User.logOut();
+
+    });
 
 });
-3
