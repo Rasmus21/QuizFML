@@ -33,27 +33,37 @@ const SDK = {
                    method: "POST",
                    url: "/quiz",
                    data: {
-                      courseId: quiz.courseId,
-                      quizTitle: quiz.quizTitle
+                       courseId: quiz.courseId,
+                       quizTitle: quiz.quizTitle
                    }
-               }, cb);
+               }, (err, data) => {
+
+                   //On login-error
+                   if (err) return cb(err);
+
+                   console.log(data)
+
+                   data = JSON.parse(data);
+
+                   cb(null, data);
+
+               });
            },
        },
-
-
     Question: {
-
-        create: (data, cb) => {
+        create: (question, cb) => {
             SDK.request({
                 method: "POST",
                 url: "/question",
-                data: data
+                data: {
+                    quizId: question.quizId,
+                    questionTitle: question.questionTitle
+                }
 
             }, cb);
         }
 
     },
-
     Course: {
         findAll: (cb) => {
             SDK.request({
@@ -63,6 +73,20 @@ const SDK = {
         }
 
 
+    },
+    Choice: {
+        create: (choice, cb) => {
+            SDK.request({
+                method: "POST",
+                url: "/choice",
+                data: {
+                    choiceTitle: choice.choiceTitle,
+                    answer: choice.answer,
+                    questionId: choice.questionId
+
+                }
+            }, cb);
+        }
     },
 
 

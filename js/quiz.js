@@ -19,8 +19,9 @@ $(document).ready(() => {
 
         let quiz = {
             courseId: e.currentTarget.getAttribute("data-id"),
-            quizTitel: prompt("What is the name of your quiz?")
+            quizTitle: prompt("What is the name of your quiz?")
         };
+
         SDK.Quiz.create(quiz, (err, data) => {
             if (err && err.xhr.status === 401) {
                 $(".form-group").addClass("has-error");
@@ -29,7 +30,8 @@ $(document).ready(() => {
                 alert("ERROR is " + err);
                 return console.log("Bad stuff happened", err)
             } else {
-                window.location.href = "AddQuestionsPage.html";
+                SDK.Storage.persist("quizId", data.quizId);
+               window.location.href = "question.html";
 
             }
         });
@@ -40,5 +42,5 @@ $(document).ready(() => {
         SDK.User.logOut();
 
     });
-    
+
 });
